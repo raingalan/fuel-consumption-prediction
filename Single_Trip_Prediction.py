@@ -1,5 +1,6 @@
 import requests.exceptions
 import streamlit as st
+import os
 
 # page config, description
 st.set_page_config(page_title="Fuel Prediction for Deliveries",
@@ -59,8 +60,14 @@ with col1:
 with col2:
     st.write('### Prediction')
 
-# API Call
-FASTAPI_ENDPOINT = 'http://127.0.0.1:8000/predict'
+# Define fastapi endpoint
+FASTAPI_ENDPOINT = os.getenv("FASTAPI_ENDPOINT")
+
+# have backup if not set
+if not FASTAPI_ENDPOINT and 'FASTAPI_ENDPOINT' in st.secrets:
+    FASTAPI_ENDPOINT = st.secrets['FASTAPI_ENDPOINT']
+if not FASTAPI_ENDPOINT:
+    FASTAPI_ENDPOINT = 'http://127.0.0.1:8000/predict'
 
 if is_predict:
 
