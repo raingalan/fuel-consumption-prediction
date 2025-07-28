@@ -3,6 +3,10 @@
 __pycache__/
 .venv/
 
+# other venvs
+venv_fastapi/
+venv_streamlit/
+
 # Pycharm
 .idea/
 
