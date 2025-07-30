@@ -16,4 +16,4 @@ COPY pages/ ./pages/
 # for cloud deployment
 EXPOSE 8080
 
-CMD ["streamlit", "run", "Single_Trip_Prediction.py", "--server.port=$PORT", "--server.address=0.0.0.0"]
+CMD ["/bin/sh", "-c", "streamlit run Single_Trip_Prediction.py --server.port=$PORT --server.address=0.0.0.0"]
