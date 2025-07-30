@@ -21,6 +21,7 @@ steps:
       - '.'
     id: 'Build Streamlit image'
 
+# images
 images:
   - 'asia-east1-docker.pkg.dev/$PROJECT_ID/my-containers/fuel-api:latest'
   - 'asia-east1-docker.pkg.dev/$PROJECT_ID/my-containers/fuel-streamlit:latest'
