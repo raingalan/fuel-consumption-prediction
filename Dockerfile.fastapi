@@ -16,4 +16,4 @@ COPY model_deployment_assets/ ./model_deployment_assets/
 
 # for cloud deployment
 EXPOSE 8080
-CMD ["python", "main.py"
+CMD ["python", "main.py"]
