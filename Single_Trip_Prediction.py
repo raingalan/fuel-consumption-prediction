@@ -78,7 +78,7 @@ if is_predict:
     with col1:
         st.info("Sending request to FastAPI")
     try:
-        response = requests.post(FASTAPI_ENDPOINT, json=input_trip)
+        response = requests.post(f"{FASTAPI_ENDPOINT}/predict", json=input_trip)
 
         if response.status_code == 200:
             predictions = response.json()
