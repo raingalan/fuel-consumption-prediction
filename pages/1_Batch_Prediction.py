@@ -102,7 +102,7 @@ if is_predict_multiple:
                 status_box.write("Sending batch data to FastAPI...")
 
             try:
-                response = requests.post(FASTAPI_ENDPOINT, json=input_trips)
+                response = requests.post(f"{FASTAPI_ENDPOINT}/predict", json=input_trips)
 
                 if response.status_code == 200:
                     predictions = response.json()
