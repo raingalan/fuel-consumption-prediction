@@ -8,6 +8,12 @@ RUN pip install --no-cache-dir -r requirements_streamlit.txt
 COPY Single_Trip_Prediction.py .
 COPY pages/ ./pages/
 
-EXPOSE 8501
+# for local deployment
+#EXPOSE 8501
+#
+#CMD ["streamlit", "run", "Single_Trip_Prediction.py", "--server.port=8501", "--server.address=0.0.0.0"]
 
-CMD ["streamlit", "run", "Single_Trip_Prediction.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# for cloud deployment
+EXPOSE 8080
+
+CMD ["streamlit", "run", "Single_Trip_Prediction.py", "--server.port=$PORT", "--server.address=0.0.0.0"]
